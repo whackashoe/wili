@@ -30,39 +30,15 @@ except:
 
 
 try:
-    mdir = config.get('directories', 'movies')
+    mdir = os.getcwd() + config.get('directories', 'media')
     try:
         os.path.isdir(mdir)
     except:
-        print "movies directory %s does not exist" % mdir
+        print "media directory %s does not exist" % mdir
         sys.exit(1)
 except:
-    print "movies config dir not found"
-    print "add: \"movies=/some/dir\" to config.ini"
-    sys.exit(1)
-
-try:
-    mdir = config.get('directories', 'tv')
-    try:
-        os.path.isdir(mdir)
-    except:
-        print "tv directory %s does not exist" % mdir
-        sys.exit(1)
-except:
-    print "tv config dir not found"
-    print "add: \"tv=/some/dir\" to config.ini"
-    sys.exit(1)
-
-try:
-    mdir = config.get('directories', 'music')
-    try:
-        os.path.isdir(mdir)
-    except:
-        print "music directory %s does not exist" % mdir
-        sys.exit(1)
-except:
-    print "music config dir not found"
-    print "add: \"music=/some/dir\" to config.ini"
+    print "media config dir not found"
+    print "add: \"media=/some/dir\" to config.ini"
     sys.exit(1)
 
 
@@ -94,9 +70,7 @@ class index:
     def GET(self, name):
         params = {}
         params['files'] = json.dumps({
-            'movies': path_to_dict(config.get('directories', 'movies')),
-            'tv':     path_to_dict(config.get('directories', 'tv')),
-            'music':  path_to_dict(config.get('directories', 'music'))
+            'media':  path_to_dict(os.getcwd() + config.get('directories', 'media'))
         })
 
         return render.index(params)
