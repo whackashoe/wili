@@ -12,4 +12,4 @@ media server
 
 ## running
 
-`./run.py`
+`./run.sh`
