@@ -1,4 +1,4 @@
-Copyright (c) 2015 whackashoe
+Copyright (c) 2015 whackashoe & frigginglorious
 
 
 

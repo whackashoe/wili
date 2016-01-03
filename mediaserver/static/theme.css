@@ -1,0 +1,53 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+html, body {
+    width:100vw;
+    height:100vh;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+}
+
+body {
+    background-color:#1C1B1F;
+    color:#F1F0EC;
+    font-family: 'Lato', sans-serif;
+    font-size:3.2rem;
+}
+
+#mainheader {
+    height:3.2rem;
+    background-color:rgba(0, 0, 0, 0.2);
+}
+
+#mainheader #backbutton {
+    height:100%;
+    background-color:rgba(25, 25, 60, 0.2);
+    float:left;
+    padding:0.5rem;
+    font-size:1.7rem;
+    width:10%;
+}
+
+#mainheader input {
+    height:100%;
+    margin-left:10%;
+    width:50%;
+    font-size:1.7rem;
+    background-color:rgba(25, 0, 20, 0.2);
+    color:#C7BBBD;
+    font-family: 'Lato', sans-serif;
+    border:0;
+    outline:0;
+    float:left;
+}
+
+#mainheader #sort {
+    margin-left:15%;
+    height:100%;
+    width:10%;
+    background-color:rgba(60, 50, 60, 0.2);
+    float:left;
+    font-size:1.7rem;
+    padding:0.5rem;
+}

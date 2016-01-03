@@ -1,0 +1,22 @@
+$def with (json_files)
+
+<div id="file_list">
+    <ul></ul>
+</div>
+
+<script>
+var data = $:json_files;
+var files = JSON.parse(data.files);
+
+jQuery('#file_list ul')
+    .append('<li id="movies">movies<ul></ul></li>')
+    .append('<li id="tv">tv<ul></ul></li>')
+    .append('<li id="music">music<ul></ul></li>');
+
+for(var i=0; i<files.movies.length; ++i) {
+    var classes = "";
+    jQuery('#movies ul').append('<li class="' + classes + '">')
+}
+
+
+</script>
