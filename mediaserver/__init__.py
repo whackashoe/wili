@@ -75,6 +75,9 @@ class index:
         params['customization']['intro_text'] = config.get('customization', 'intro_text')
         params['customization']['theme']      = config.get('customization', 'theme')
 
+        params['modules'] = {}
+        params['modules']['library'] = config.get('modules', 'library')
+
         params['files'] = json.dumps({
             'media':  path_to_dict(os.getcwd() + config.get('directories', 'media'))
         })
