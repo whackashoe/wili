@@ -77,6 +77,9 @@ params['customization']['theme']      = config.get('customization', 'theme')
 params['modules'] = {}
 params['modules']['library'] = config.get('modules', 'library')
 
+params['directories'] = {}
+params['directories']['media'] = config.get('directories', 'media')
+
 class index:
     def GET(self, name):
         params['page_specific'] = {}
