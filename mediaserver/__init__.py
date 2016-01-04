@@ -60,7 +60,9 @@ def path_to_dict(path):
     return d
 
 urls = (
-    '/(.*)', 'index'
+    '/admin', 'admin',
+    '/(.*)', 'index',
+    '/', 'index'
 )
 
 app = application(urls, globals())
@@ -83,6 +85,12 @@ class index:
         })
 
         return render.index(params)
+
+class admin:
+    def GET(self):
+    #     params={}
+    #     return render.admin(params)
+        return render.admin()
 
 if __name__ == "__main__":
     app.run(port=config.get('network', 'port'))
