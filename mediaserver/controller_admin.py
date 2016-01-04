@@ -10,9 +10,9 @@ class admin:
         except:
             return "config.ini not found or could not be read"
         data = web.input()
-        config.set('customization', 'title', str(data.title))
-        config.set('customization', 'intro_text', str(data.intro_text))
-        config.set('customization', 'theme', str(data.theme))
+        config.set('customization', 'title', str(data.set_title))
+        config.set('customization', 'intro_text', str(data.set_intro_text))
+        config.set('customization', 'theme', str(data.set_theme))
         config.write(configWrite)
         # return "Grrreat success! boe: %s, bax: %s" % (form.d.title)#(form.d.boe, form['bax'].value)
 
