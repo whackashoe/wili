@@ -7,6 +7,8 @@ import glob
 import sys
 import json
 
+from web import form
+
 
 config = ConfigParser.ConfigParser()
 try:
@@ -80,6 +82,13 @@ params['modules']['library'] = config.get('modules', 'library')
 params['directories'] = {}
 params['directories']['media'] = config.get('directories', 'media')
 
+
+# customization = form.Form( 
+#     form.Textbox("title",
+#         form.notnull),
+#     form.Textbox("intro_text"), 
+#     form.Dropdown('theme', ['default']))
+
 class index:
     def GET(self, name):
         params['page_specific'] = {}
@@ -91,10 +100,26 @@ class index:
 
 class admin:
     def GET(self):
-    #     params={}
-    #     return render.admin(params)
+        # form = customization()
+        return render.admin(params) # , form
+
+    def POST(self): 
+        try:
+            configWrite = open('config.ini', 'r+')
+        except:
+            return "config.ini not found or could not be read"
+        data = web.input()
+        config.set('customization', 'title', str(data.title))
+        config.set('customization', 'intro_text', str(data.intro_text))
+        config.set('customization', 'theme', str(data.theme))
+        config.write(configWrite)
+        # return "Grrreat success! boe: %s, bax: %s" % (form.d.title)#(form.d.boe, form['bax'].value)
+
+        params['customization']['title']      = config.get('customization', 'title')
+        params['customization']['intro_text'] = config.get('customization', 'intro_text')
+        params['customization']['theme']      = config.get('customization', 'theme')
+
         return render.admin(params)
 
 if __name__ == "__main__":
     app.run(port=config.get('network', 'port'))
-

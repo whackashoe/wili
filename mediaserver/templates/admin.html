@@ -6,27 +6,33 @@ $def with (params)
 </div>
 <div class="row">
 	<div class="col-sm-12">
-		<div class="form-group">
-			<label for="title">Title:</label>
-			<input type="text" class="form-control" id="title">
-		</div>
-		<div class="form-group">
-			<label for="intro_text">Intro Text:</label>
-			<input type="text" class="form-control" id="intro_text">
-		</div>
-		<div class="form-group">
-  			<label for="theme">Select list:</label>
-  			<select class="form-control" id="theme">
-				<option>default</option>
-			</select>
-		</div>
+		<form name="customization" method="POST" action="/admin">
+			<div class="form-group">
+				<label for="title">Title:</label>
+				<input type="text" class="form-control" id="title" name="title">
+				<label for="intro_text">Intro Text:</label>
+				<input type="text" class="form-control" id="intro_text" name="intro_text">
+			</div>
+			<div class="form-group">
+				
+			</div>
+			<div class="form-group">
+	  			<label for="theme">Select list:</label>
+	  			<select class="form-control" id="theme" name="theme">
+					<option>default</option>
+				</select>
+			</div>
+			<button type="submit">Submit</button>
+		</form>
 	</div>
 </div>
 
 <script>var data = $:params;</script>
 
 <script>
-	var intro_text = data.customization.intro_text
-	$("#intro_text").val(intro_text);
+	jQuery("#title").val(data.customization.title);
+	jQuery("#intro_text").val(data.customization.intro_text);
+	jQuery("#theme").val(data.customization.theme);
+
 	console.info(data);
 </script>
