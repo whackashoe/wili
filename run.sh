@@ -1,3 +1,3 @@
 #!/bin/sh
 
-cd mediaserver && python __init__.py
+cd wili && python __init__.py
