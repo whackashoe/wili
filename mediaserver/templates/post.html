@@ -12,7 +12,6 @@ $def with (content)
         <title></title>
 
         <link href="/static/ui/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/static/ui/css/fonts.css" rel="stylesheet">
         <link href="/static/ui/css/clean-blog.min.css" rel="stylesheet">
         <link href="/static/ui/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -31,45 +30,23 @@ $def with (content)
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header page-scroll">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/"></a>
+                    <a class="navbar-brand" href="index.html">Start Bootstrap</a>
                 </div>
 
-                <div id="main-navbar" class="collapse navbar-collapse">
+                <div id="main-navbar" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                     </ul>
                 </div>
             </div>
         </nav>
 
-
-        <header class="intro-header" style="background-image: url('/static/ui/img/header-bg.jpg')">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                        <div class="post-heading">
-                            <h1 id="intro_text"></h1>
-                            <h2 id="intro_subtext" class="subheading"></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <article>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                        $:content
-                    </div>
-                </div>
-            </div>
-        </article>
+        $:content
 
         <hr>
 
@@ -82,12 +59,28 @@ $def with (content)
                                 <a href="#">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-github fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
                             </li>
                         </ul>
-                        <p class="copyright text-muted">copyleft</p>
+                        <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
                     </div>
                 </div>
             </div>

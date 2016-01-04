@@ -29,9 +29,10 @@ except:
 
 params = {}
 params['customization'] = {}
-params['customization']['title']      = config.get('customization', 'title')
-params['customization']['intro_text'] = config.get('customization', 'intro_text')
-params['customization']['theme']      = config.get('customization', 'theme')
+params['customization']['title']         = config.get('customization', 'title')
+params['customization']['intro_text']    = config.get('customization', 'intro_text')
+params['customization']['intro_subtext'] = config.get('customization', 'intro_subtext')
+params['customization']['theme']         = config.get('customization', 'theme')
 
 params['modules'] = {}
 params['modules']['library'] = config.get('modules', 'library')

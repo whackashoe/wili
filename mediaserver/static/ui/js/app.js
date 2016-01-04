@@ -6,6 +6,8 @@ $(function() {
     );
     $('title, .navbar-brand').text(data.customization.title);
     $('#intro_text').text(data.customization.intro_text);
+    $('#intro_subtext').text(data.customization.intro_subtext);
+
 
 
     // menu setup
