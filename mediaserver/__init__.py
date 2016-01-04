@@ -69,6 +69,12 @@ render = web.template.render('templates/', base='layout')
 class index:
     def GET(self, name):
         params = {}
+
+        params['customization'] = {}
+        params['customization']['title']      = config.get('customization', 'title')
+        params['customization']['intro_text'] = config.get('customization', 'intro_text')
+        params['customization']['theme']      = config.get('customization', 'theme')
+
         params['files'] = json.dumps({
             'media':  path_to_dict(os.getcwd() + config.get('directories', 'media'))
         })
