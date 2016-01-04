@@ -1,3 +1,5 @@
+# this has all the globals
+
 import os
 import web
 import sys

@@ -1,9 +1,8 @@
 #!/usr/bin/env python2.7
 
-from application import application
 from settings import *
-from util import *
 
+from application import application
 from controller_index import index
 from controller_admin import admin
 from controller_library import library
