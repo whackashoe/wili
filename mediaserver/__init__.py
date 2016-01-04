@@ -7,6 +7,8 @@ from controller_index import index
 from controller_admin import admin
 from controller_library import library
 
+from web import form
+
 
 urls = (
     '/',        'index',
@@ -18,4 +20,3 @@ app = application(urls, globals())
 
 if __name__ == "__main__":
     app.run(port = config.get('network', 'port'))
-
