@@ -68,19 +68,19 @@ urls = (
 app = application(urls, globals())
 render = web.template.render('templates/', base='layout')
 
+params = {}
+params['customization'] = {}
+params['customization']['title']      = config.get('customization', 'title')
+params['customization']['intro_text'] = config.get('customization', 'intro_text')
+params['customization']['theme']      = config.get('customization', 'theme')
+
+params['modules'] = {}
+params['modules']['library'] = config.get('modules', 'library')
+
 class index:
     def GET(self, name):
-        params = {}
-
-        params['customization'] = {}
-        params['customization']['title']      = config.get('customization', 'title')
-        params['customization']['intro_text'] = config.get('customization', 'intro_text')
-        params['customization']['theme']      = config.get('customization', 'theme')
-
-        params['modules'] = {}
-        params['modules']['library'] = config.get('modules', 'library')
-
-        params['files'] = json.dumps({
+        params['page_specific'] = {}
+        params['page_specific']['files'] = json.dumps({
             'media':  path_to_dict(os.getcwd() + config.get('directories', 'media'))
         })
 
@@ -90,7 +90,7 @@ class admin:
     def GET(self):
     #     params={}
     #     return render.admin(params)
-        return render.admin()
+        return render.admin(params)
 
 if __name__ == "__main__":
     app.run(port=config.get('network', 'port'))
