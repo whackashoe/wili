@@ -1,0 +1,25 @@
+$def with (params)
+
+<div id="library_file_list">
+    <input class="fuzzy-search" placeholder="Search" />
+    <ul class="list"></ul>
+</div>
+
+<script>var data = $:params;</script>
+
+<script>
+var files = JSON.parse(data.page_specific.files);
+var children = files.media.children;
+
+for(var i=0; i<children.length; ++i) {
+    if(children[i].type == 'file') {
+        jQuery('#library_file_list .list')
+            .append('<li><a href="' + data.directories.media + '/' + children[i].name + '" class="filename" download>' + children[i].name + '</a></li>');
+    }
+}
+
+var userList = new List('library_file_list', {
+    valueNames: ['filename'],
+    plugins: [ ListFuzzySearch() ]
+});
+</script>

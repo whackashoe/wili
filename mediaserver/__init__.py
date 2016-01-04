@@ -60,9 +60,9 @@ def path_to_dict(path):
     return d
 
 urls = (
-    '/admin', 'admin',
-    '/(.*)', 'index',
-    '/', 'index'
+    '/',        'index',
+    '/admin',   'admin',
+    '/library', 'library'
 )
 
 app = application(urls, globals())
@@ -81,18 +81,20 @@ params['directories'] = {}
 params['directories']['media'] = config.get('directories', 'media')
 
 class index:
-    def GET(self, name):
+    def GET(self):
+        return render.index(params)
+
+class library:
+    def GET(self):
         params['page_specific'] = {}
         params['page_specific']['files'] = json.dumps({
             'media':  path_to_dict(os.getcwd() + config.get('directories', 'media'))
         })
 
-        return render.index(params)
+        return render.library(params)
 
 class admin:
     def GET(self):
-    #     params={}
-    #     return render.admin(params)
         return render.admin(params)
 
 if __name__ == "__main__":
