@@ -3,9 +3,7 @@ $def with (params)
 <div id="intro_text"></div>
 
 <div id="library_file_list">
-    <input class="search" placeholder="Search" />
-    <button class="sort" data-sort="name">Sort by name</button>
-
+    <input class="fuzzy-search" placeholder="Search" />
     <ul class="list"></ul>
 </div>
 
@@ -21,6 +19,7 @@ for(var i=0; i<children.length; ++i) {
 }
 
 var userList = new List('library_file_list', {
-    valueNames: ['filename']
+    valueNames: ['filename'],
+    plugins: [ ListFuzzySearch() ]
 });
 </script>
