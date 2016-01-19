@@ -18,3 +18,5 @@ The goal of the project is to allow any wifi device that runs python to host it'
 ## running
 
 `./run.sh`
+
+All preferences can then be configured from http://0.0.0.0:8080/admin
