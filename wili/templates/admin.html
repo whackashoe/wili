@@ -6,7 +6,7 @@ $def with (params)
 </div>
 <div class="row">
 	<div class="col-sm-12">
-		<form name="customization" method="POST" action="/admin">
+		<form name="customization" method="POST" action="/admin" enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="set_title">Title:</label>
 				<input type="text" class="form-control" id="set_title" name="set_title">
@@ -16,10 +16,21 @@ $def with (params)
 				<input type="text" class="form-control" id="set_intro_text" name="set_intro_text">
 			</div>
 			<div class="form-group">
-	  			<label for="set_theme">Select list:</label>
+				<label for="set_intro_subtext">Intro Subtext:</label>
+				<input type="text" class="form-control" id="set_intro_subtext" name="set_intro_subtext">
+			</div>
+			<div class="form-group">
+	  			<label for="set_theme">Theme:</label>
 	  			<select class="form-control" id="set_theme" name="set_theme">
 					<option>default</option>
 				</select>
+			</div>
+			<div class="form-group">
+	  			<label for="set_image">Image:</label>
+	  			<img class="img-responsive" src="/static/ui/img/header-bg.jpg">
+				<!-- <span class="btn btn-default btn-file"> -->
+				    <input name="set_image" id="set_image" type="file">
+				<!-- </span> -->
 			</div>
 			<button type="submit">Submit</button>
 		</form>
@@ -31,6 +42,7 @@ $def with (params)
 <script>
 	jQuery("#set_title").val(data.customization.title);
 	jQuery("#set_intro_text").val(data.customization.intro_text);
+	jQuery("#set_intro_subtext").val(data.customization.intro_subtext);
 	jQuery("#set_theme").val(data.customization.theme);
 
 	console.info(data);
